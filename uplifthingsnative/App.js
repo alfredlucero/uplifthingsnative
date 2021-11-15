@@ -32,15 +32,18 @@ export default function App() {
   const onPressClearUplifthing = () => {
     onChangeUplifthingInput("");
   };
+  const onPressClearAllUplifthings = () => {
+    setUplifthings([]);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <UplifthingsHeader />
       <Text style={[rootStyles.subheaderText, styles.subheader]}>
-        Things to uplift your soul
+        things to uplift your soul
       </Text>
       <View style={styles.uplifthingInputContainer}>
-        <Text style={rootStyles.labelText}>What uplifts you today?</Text>
+        <Text style={rootStyles.labelText}>What uplifted me today?</Text>
         <TextInput
           style={[rootStyles.baseInput, styles.uplifthingInput]}
           onChangeText={onChangeUplifthingInput}
@@ -51,6 +54,7 @@ export default function App() {
           <TouchableOpacity
             style={styles.uplifthingClearButton}
             onPress={onPressClearUplifthing}
+            disabled={uplifthingInput === ""}
           >
             <View style={rootStyles.buttonSecondary}>
               <Text style={rootStyles.buttonSecondaryText}>Clear</Text>
@@ -68,6 +72,15 @@ export default function App() {
         </View>
       </View>
       <UplifthingsList uplifthings={uplifthings} />
+      {uplifthings.length > 0 && (
+        <View style={styles.uplifthingBottomContainer}>
+          <TouchableOpacity onPress={onPressClearAllUplifthings}>
+            <View style={rootStyles.buttonSecondary}>
+              <Text style={rootStyles.buttonSecondaryText}>Clear All</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
@@ -98,5 +111,10 @@ const styles = StyleSheet.create({
   },
   uplifthingAddButton: {
     flex: 1,
+  },
+  uplifthingBottomContainer: {
+    padding: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

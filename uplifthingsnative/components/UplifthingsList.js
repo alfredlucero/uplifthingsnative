@@ -40,7 +40,10 @@ const styles = StyleSheet.create({
   },
   list: {},
   listItem: {
-    paddingVertical: 5,
+    padding: 10,
+    backgroundColor: "#e9ecef",
+    borderRadius: 5,
+    marginBottom: 10,
   },
 });
 
