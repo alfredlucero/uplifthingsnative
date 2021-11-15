@@ -9,10 +9,6 @@ const UplifthingsList = ({ uplifthings }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={[rootStyles.subheaderText, styles.subheader]}>
-        What uplifts you today?
-      </Text>
-
       <View style={styles.list}>
         <FlatList
           data={uplifthings}
@@ -37,15 +33,15 @@ const UplifthingsListItem = ({ uplifthing, index }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingLeft: 15,
+    paddingHorizontal: 15,
   },
   subheader: {
     paddingBottom: 30,
   },
-  list: {
-    paddingLeft: 15,
+  list: {},
+  listItem: {
+    paddingVertical: 5,
   },
-  listItem: {},
 });
 
 export default UplifthingsList;

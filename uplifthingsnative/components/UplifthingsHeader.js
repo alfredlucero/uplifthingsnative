@@ -14,16 +14,15 @@ const UplifthingsHeader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 45,
-    marginBottom: 15,
+    paddingTop: 40,
   },
   uplifthingsIcon: {
-    borderRadius: 40,
-    width: 80,
-    height: 80,
+    borderRadius: 25,
+    width: 50,
+    height: 50,
     backgroundColor: "#95d5b2",
-    top: 10,
-    left: 45,
+    top: 20,
+    left: 55,
     position: "absolute",
   },
   header: {
