@@ -6,7 +6,7 @@ import {
   StatusBar,
   TextInput,
   View,
-  TouchableHighlight,
+  TouchableOpacity,
 } from "react-native";
 import uuid from "react-native-uuid";
 import UplifthingsHeader from "./components/UplifthingsHeader";
@@ -48,15 +48,15 @@ export default function App() {
           placeholder="I'm thankful for..."
         />
         <View style={styles.uplifthingInputButtonGroup}>
-          <TouchableHighlight
+          <TouchableOpacity
             style={styles.uplifthingClearButton}
             onPress={onPressClearUplifthing}
           >
             <View style={rootStyles.buttonSecondary}>
               <Text style={rootStyles.buttonSecondaryText}>Clear</Text>
             </View>
-          </TouchableHighlight>
-          <TouchableHighlight
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.uplifthingAddButton}
             onPress={onPressAddUplifthing}
             disabled={uplifthingInput === ""}
@@ -64,7 +64,7 @@ export default function App() {
             <View style={rootStyles.buttonPrimary}>
               <Text style={rootStyles.buttonPrimaryText}>Add</Text>
             </View>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </View>
       </View>
       <UplifthingsList uplifthings={uplifthings} />
